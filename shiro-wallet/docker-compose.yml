@@ -1,0 +1,22 @@
+version: "3.7"
+
+services:
+  app_proxy:
+    environment:
+      APP_HOST: $APP_SHIRO_WALLET_IP
+      APP_PORT: 8080
+      PROXY_AUTH_ADD: "false"
+
+  web:
+    image: ghcr.io/diamondhands-rgb/shiro-backend:0.0.4
+    restart: on-failure
+    stop_grace_period: 1m
+    environment:
+      PORT: 8080
+      BITCOIN_NETWORK_NAME: $APP_SHIRO_WALLET_BITCOIN_NETWORK_NAME
+      ELECTRUM_URL: $APP_SHIRO_WALLET_ELECTRUM_URL
+    networks:
+      default:
+        ipv4_address: $APP_SHIRO_WALLET_IP
+    volumes:
+      - "${APP_DATA_DIR}/data-dir:/tmp/shiro-wallet"
