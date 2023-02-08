@@ -1,0 +1,22 @@
+manifestVersion: 1
+id: shiro-wallet
+category: Wallets
+name: Shiro Wallet
+version: "0.0.0"
+tagline: Simple web wallet for the RGB protocol
+description: >-
+  Shiro-wallet is a web wallet for token assets defined by RGB protocols.
+releaseNotes: >-
+  Still pre alpha. Don't trust.
+developer: DiamondHands devs
+website: https://github.com/diamondhands-dev/shiro-backend
+dependencies:
+  - bitcoin
+  - electrs
+repo: https://github.com/diamondhands-dev/shiro-backend
+support: https://github.com/diamondhands-dev/shiro-backend/issues
+port: 3002
+gallery: []
+path: ""
+defaultUsername: ""
+defaultPassword: ""
