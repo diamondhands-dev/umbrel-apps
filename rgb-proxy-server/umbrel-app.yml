@@ -1,0 +1,20 @@
+manifestVersion: 1
+id: rgb-proxy-server
+category: Wallets
+name: RGB proxy server
+version: "0.1.0"
+tagline: A consignment proxy server for RGB wallets.
+description: >-
+  RGB proxy server is intended to facilitate the relay of consignment data between RGB wallets, enabling a better user experience for wallet users.
+releaseNotes: >-
+  Still pre alpha. Don't trust.
+developer: Francisco Calderón
+website: https://github.com/grunch/rgb-proxy-server
+dependencies: []
+repo: https://github.com/grunch/rgb-proxy-server
+support: https://github.com/grunch/rgb-proxy-server/issues
+port: 4321
+gallery: []
+path: ""
+defaultUsername: ""
+defaultPassword: ""

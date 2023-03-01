@@ -1,0 +1,21 @@
+version: "3.7"
+
+services:
+  app_proxy:
+    environment:
+      APP_HOST: $APP_RGB_PROXY_SERVER_IP
+      APP_PORT: 3000
+      PROXY_AUTH_ADD: "false"
+
+  web:
+    image: ghcr.io/diamondhands-rgb/rgb-proxy-server:0.1.0-dh002
+    networks:
+      default:
+        ipv4_address: $APP_RGB_PROXY_SERVER_IP
+    ports:
+      - 3000:3000
+    restart: on-failure
+    stop_grace_period: 1m
+    volumes:
+      - "${APP_DATA_DIR}/data/rgb-proxy-server/.npm:/root/.npm"
+      - "${APP_DATA_DIR}/data/rgb-proxy-server/.rgb-proxy-server:/root/.rgb-proxy-server"
