@@ -27,6 +27,6 @@ services:
     ports:
       - 8080:8080
     volumes:
-      - ${/tmp/shiro-wallet}:/tmp/shiro-wallet
+      - ${shiro-wallet}/tmp/shiro-wallet:/tmp/shiro-wallet
     environment:
         BITCOIN_NETWORK: testnet
