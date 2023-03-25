@@ -14,7 +14,7 @@ services:
     restart: on-failure
     stop_grace_period: 1m
     environment:
-        API_ROOT: http://shiro-wallet_backend_1:8080
+        API_ROOT: ${APP_SHIRO_BACKEND_IP}:${APP_SHIRO_BACKEND_PORT}
   # If your app has more services, like a database container, you can define those
   # services below:
   # db:
@@ -28,3 +28,6 @@ services:
       - ${APP_DATA_DIR}/tmp/shiro-wallet:/tmp/shiro-wallet
     environment:
         BITCOIN_NETWORK: testnet
+    networks:
+       default:
+         ipv4_address: $APP_SHIRO_BACKEND_IP
