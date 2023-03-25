@@ -12,14 +12,14 @@ releaseNotes: >-
 
 developer: DiamondHands Community
 website: https://www.diamondhandsnode.com/
-dependencies:
-  - electrs
+#dependencies:
+#  - electrs
 repo: https://github.com/orgs/diamondhands-dev/
 support: https://github.com/orgs/diamondhands-dev/
 port: 3002
 gallery:
-  - 1.jpg
-  - 2.jpg
+  - https://uploads-ssl.webflow.com/635ec327c7a1a7b88778165a/635ef5965dee79abcb676de3_Logo.svg
+  - https://pbs.twimg.com/profile_banners/1589860375666692096/1672254201/1500x500
   - 3.jpg
 path: ""
 defaultUsername: ""
