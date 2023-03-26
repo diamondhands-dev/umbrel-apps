@@ -3,31 +3,17 @@ version: "3.7"
 services:
   app_proxy:
     environment:
-      # <app-id>_<web-container-name>_1
-      # e.g. 'btc-rpc-explorer_web_1'
-      # Note that the '_1' at the end is needed
       APP_HOST: shiro-wallet_web_1
       APP_PORT: 3000
-  
+
   web:
     image: ghcr.io/diamondhands-dev/shiro-frontend:latest
     restart: on-failure
     stop_grace_period: 1m
     environment:
-        API_ROOT: http://${APP_SHIRO_BACKEND_IP}:${APP_SHIRO_BACKEND_PORT}
-  # If your app has more services, like a database container, you can define those
-  # services below:
-  # db:
-  #   image: <docker-image>:<tag>
-  #   ...
-  backend:
-    image: ghcr.io/diamondhands-dev/shiro-backend:latest
-    restart: on-failure
-    stop_grace_period: 1m
+        API_ROOT: http://shiro.diamondhands.technology:8080
+    ports:
+      - 8080:8080
+      - 3000:3000
     volumes:
       - ${APP_DATA_DIR}/tmp/shiro-wallet:/tmp/shiro-wallet
-    environment:
-        BITCOIN_NETWORK: testnet
-    networks:
-       default:
-         ipv4_address: $APP_SHIRO_BACKEND_IP
