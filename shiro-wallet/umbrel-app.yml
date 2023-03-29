@@ -12,8 +12,7 @@ releaseNotes: >-
 
 developer: DiamondHands Community
 website: https://www.diamondhandsnode.com/
-dependencies:
-#  - electrs
+dependencies: []
 repo: https://github.com/orgs/diamondhands-dev/
 support: https://github.com/orgs/diamondhands-dev/
 port: 3002
