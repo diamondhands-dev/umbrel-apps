@@ -12,5 +12,7 @@ services:
     stop_grace_period: 1m
     environment:
         BITCOIN_NETWORK_NAME: testnet
+    ports:
+      - 8080:8080
     volumes:
       - ${APP_DATA_DIR}/tmp/shiro-wallet:/tmp/shiro-wallet
